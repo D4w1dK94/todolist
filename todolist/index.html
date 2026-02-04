@@ -1,13 +1,52 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>todolist</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css" />
+
+  <title>TODO App</title>
+</head>
+<body>
+
+<h1 class="app-title">Dawid Kosmalski - aplikacja TO-DO</h1>
+
+<!--FORMULARZ -->
+<form id="todo-form" class="todo-form">
+  <div class="form-field">
+    <label>
+      Zadanie:
+      <input type="text" id="title-input" />
+    </label>
+    <div class="error" id="title-error"></div>
+  </div>
+  <div class="counter" id="title-counter">
+    Pozostało: 50
+  </div>
+
+  <div class="form-field">
+    <label>
+      Opis:
+      <textarea id="description-input"></textarea>
+    </label>
+    <div class="error" id="description-error"></div>
+  </div>
+  <div class="counter" id="description-counter">
+    Pozostało: 160
+  </div>
+
+  <button type="submit" class="add-button">Dodaj zadanie</button>
+</form>
+
+<!--LISTA-->
+<div id="todo-list" class="todo-list"></div>
+
+<!--SZCZEGÓŁY-->
+<dialog id="details-dialog" class="details-dialog">
+  <button id="close-dialog">Zamknij</button>
+  <div id="details-content"></div>
+</dialog>
+
+<script type="module" src="/src/main.js"></script>
+</body>
 </html>
